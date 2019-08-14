@@ -9,10 +9,32 @@ function transition_headshot() {
 		setTimeout(() => {
 			headshot_div.classList.remove("blur");
 			// console.log("UNBLURRING")
-		}, 500)
-	}, 500);
+		}, 175)
+	}, 525);
 }
 
 document.querySelector("body").onload = () => {
-	transition_headshot()
+	setTimeout(() => {
+		transition_headshot()
+	}, 200)
+}
+
+headshot_div = document.getElementById("headshot");
+running_timer = null
+headshot_div.onmouseover = () => {
+	headshot_div = document.getElementById("headshot");
+	headshot_div.classList.add("blur");
+	// console.log("BLURRING")
+	//wait transition time
+	setTimeout(() => {
+		if(document.querySelector(".overlay").classList.contains("transparent")){
+			document.querySelector(".overlay").classList.remove("transparent");
+		} else {
+			document.querySelector(".overlay").classList.add("transparent");
+		}
+		setTimeout(() => {
+			headshot_div.classList.remove("blur");
+			// console.log("UNBLURRING")
+		}, 175)
+	}, 525);
 }
