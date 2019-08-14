@@ -13,10 +13,15 @@ div#main {
 	color: #2c2e33;
 }
 
-#headshot {
+#headshotwrapper {
 	width: 25vmin;
 	height: 25vmin;
 	margin: auto;
+	overflow: hidden;
+}
+#headshot {
+	width: 25vmin;
+	height: 25vmin;
 	border-radius: 50%;
 	overflow: hidden;
 	position: relative;
