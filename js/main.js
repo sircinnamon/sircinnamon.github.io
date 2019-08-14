@@ -21,7 +21,7 @@ document.querySelector("body").onload = () => {
 
 headshot_div = document.getElementById("headshot");
 running_timer = null
-headshot_div.onmouseover = () => {
+function toggle_overlay() {
 	headshot_div = document.getElementById("headshot");
 	headshot_div.classList.add("blur");
 	// console.log("BLURRING")
@@ -38,3 +38,5 @@ headshot_div.onmouseover = () => {
 		}, 175)
 	}, 525);
 }
+headshot_div.ontouchstart = () => {toggle_overlay()}
+headshot_div.onmouseover = () => {toggle_overlay()}
