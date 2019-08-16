@@ -1,42 +1,34 @@
-function transition_headshot() {
-	headshot_div = document.getElementById("headshot");
-	headshot_div.classList.add("blur");
-	// console.log("BLURRING")
-	//wait transition time
-	setTimeout(() => {
-		document.querySelector(".overlay").classList.add("transparent");
-		// console.log("HIDING")
-		setTimeout(() => {
-			headshot_div.classList.remove("blur");
-			// console.log("UNBLURRING")
-		}, 175)
-	}, 525);
-}
-
-document.querySelector("body").onload = () => {
-	setTimeout(() => {
-		transition_headshot()
-	}, 200)
-}
-
+lock = false;
 headshot_div = document.getElementById("headshot");
-running_timer = null
 function toggle_overlay() {
-	headshot_div = document.getElementById("headshot");
-	headshot_div.classList.add("blur");
-	// console.log("BLURRING")
+	if(lock){return;}
+	lock = true;
+	document.querySelector(".blurredsvg").classList.remove("transparent");
+	start = Date.now()
+	// console.log(""+start+" - BLURRING")
 	//wait transition time
 	setTimeout(() => {
-		if(document.querySelector(".overlay").classList.contains("transparent")){
-			document.querySelector(".overlay").classList.remove("transparent");
+		if(document.querySelector(".svg").classList.contains("transparent")){
+			document.querySelector(".svg").classList.remove("transparent");
 		} else {
-			document.querySelector(".overlay").classList.add("transparent");
+			document.querySelector(".svg").classList.add("transparent");
 		}
+		// console.log(""+Date.now()-start+" - UNBLURRING")
+		document.querySelector(".blurredsvg").classList.add("transparent");
 		setTimeout(() => {
-			headshot_div.classList.remove("blur");
-			// console.log("UNBLURRING")
-		}, 175)
-	}, 525);
+			lock = false;
+			// console.log(""+Date.now()-start+" - DONE")
+		},700)
+	}, 700);
 }
+// console.log(""+Date.now()+" - ADDING EVENTS")
+document.querySelector("body").onload = () => {
+	// console.log(""+Date.now()+" - LOADED BODY")
+	setTimeout(() => {
+		// console.log(""+Date.now()+" - START TRANSITION")
+		toggle_overlay()
+	}, 300)
+}
+
 headshot_div.ontouchstart = () => {toggle_overlay()}
 headshot_div.onmouseover = () => {toggle_overlay()}

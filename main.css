@@ -31,17 +31,16 @@ div#main {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: opacity 0.7s linear, filter 0.7s linear;
 	position: absolute;
-	left: 1px;
 }
 
-#headshot img.overlay {
+#headshot img.blurredsvg {
 	z-index: 100;
+	transition: opacity 0.7s linear;
 }
 
-#headshot.blur img {
-	filter: blur(6px);
+#headshot img.svg {
+	z-index: 50;
 }
 
 #headshot img.transparent {
@@ -79,7 +78,7 @@ h3 {
 	display: inline-block;
 	margin-left: 2vmin;
 	margin-top: 1vmin;
-	transition: margin 250ms;
+	transition: margin 250ms, box-shadow 0.3s;
 	background: #c9cdd6;
 	cursor: pointer;
 	position:relative;
@@ -100,7 +99,8 @@ h3 {
 .card:hover {
 	margin-top: 0vmin;
 	margin-bottom: 1vmin;
-	transition: margin 250ms;
+	transition: margin 250ms, box-shadow 0.3s;
+	box-shadow: 4px 13px  12px 0px rgba(0,0,0,0.5);
 }
 .cardlink {
 	height: 100%;
