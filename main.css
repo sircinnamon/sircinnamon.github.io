@@ -146,8 +146,8 @@ div.project a {
 }
 #socialmedia img{
 	height: 3vmin;
-	padding-right: 1vmin;
-	margin-bottom: -1vmin;
+	padding-right: 0.5vmin;
+	margin-bottom: -0.8vmin;
 }
 #socialmedia a{
 	font-family: sans-serif;
