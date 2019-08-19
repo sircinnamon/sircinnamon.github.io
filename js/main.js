@@ -30,5 +30,19 @@ document.querySelector("body").onload = () => {
 	}, 300)
 }
 
+function card_click() {
+	project = document.getElementById(this.dataset.project);
+	if(project.style.height == project.dataset.height){
+		project.style.height = 0;
+	} else {
+		project.style.height = project.dataset.height;
+	}
+
+}
+
 headshot_div.ontouchstart = () => {toggle_overlay()}
 headshot_div.onmouseover = () => {toggle_overlay()}
+cards = document.getElementsByClassName("cardlink");
+for (var i = cards.length - 1; i >= 0; i--) {
+	cards[i].addEventListener('click', card_click);
+}

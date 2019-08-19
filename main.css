@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 div#main {
 	margin: auto;
 	margin-top: 4vh;
@@ -53,6 +56,10 @@ h2 {
 	font-family: sans-serif;
 	color: #2c2e33;
 }
+h2.mono {
+	font-family: monospace;
+	font-size: 2vmin;
+}
 h3 {
 	text-align: center;
 	font-size: 2vmin;
@@ -99,7 +106,7 @@ h3 {
 .card:hover {
 	margin-top: 0vmin;
 	margin-bottom: 1vmin;
-	transition: margin 250ms, box-shadow 0.3s;
+	transition: margin-bottom 250ms, box-shadow 0.3s;
 	box-shadow: 4px 13px  12px 0px rgba(0,0,0,0.5);
 }
 .cardlink {
@@ -122,6 +129,9 @@ div.project p {
 	font-family: sans-serif;
 	color: #2c2e33;
 }
+div.project a {
+	font-family: monospace;
+}
 
 #socialmedia {
 	text-align: center;
@@ -135,14 +145,21 @@ div.project p {
 	width: 25vmin;
 }
 #socialmedia img{
-	height: 4vmin;
+	height: 3vmin;
 	padding-right: 1vmin;
 	margin-bottom: -1vmin;
 }
 #socialmedia a{
 	font-family: sans-serif;
 	color: #2c2e33;
-	line-height: 4vmin;
-	font-size: 3vmin;
+	line-height: 3vmin;
+	font-size: 2vmin;
 	cursor: pointer;
+	border: solid black 1px;
+	padding: 1vmin 2vmin;
+	border-radius: 7vmin;
+	transition: background 100ms;
+}
+#socialmedia a:hover{
+	background: rgba(255,255,255,0.3);
 }
